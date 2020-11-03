@@ -12,7 +12,7 @@ Install following dependencies.
 Go to the frontend folder
 
 ```bash
-cd frontend
+cd Amazon-Clone
 ```
 
 We are going to use [Yarn](https://yarnpkg.com/getting-started) to install the dependencies, run the following command
