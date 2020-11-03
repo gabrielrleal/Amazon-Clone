@@ -15,7 +15,7 @@ Go to the frontend folder
 cd frontend
 ```
 
-We are going to use [Yarn](https://yarnpkg.com/getting-started) to install the dependencies of OnePlace application, run the following command
+We are going to use [Yarn](https://yarnpkg.com/getting-started) to install the dependencies, run the following command
 
 ```bash
  yarn
