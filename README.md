@@ -9,7 +9,7 @@ Install following dependencies.
 - [Node.js](https://nodejs.org)
 - [Yarn](https://yarnpkg.com/getting-started)
 
-Go to the frontend folder
+Clone the project and go to the project folder
 
 ```bash
 cd Amazon-Clone
