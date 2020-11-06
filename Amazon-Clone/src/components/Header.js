@@ -1,9 +1,9 @@
 import React from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-import { useStateValue } from "./StateProvider";
+import { useStateValue } from "../StateProvider";
 
-import "./Header.css";
+import "../styles/components/Header.css";
 function Header() {
   const [{ basket, user }, dispatch] = useStateValue();
 
@@ -12,6 +12,7 @@ function Header() {
       <img
         className="header_logo"
         src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+        alt="Amazon Logo"
       />
 
       <div className="header_search">

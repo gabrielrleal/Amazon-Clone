@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./Login.css";
+import "../styles/pages/Login.css";
 import { Link } from "react-router-dom";
-import {} from "./firebase";
+import {} from "../firebase";
 
 function Login() {
   const [email, setEmail] = useState("");

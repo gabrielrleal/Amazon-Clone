@@ -1,9 +1,9 @@
-import "./App.css";
+import "./styles/pages/App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./Home";
-import Header from "./Header";
-import Checkout from "./Checkout";
-import Login from "./Login";
+import Home from "./pages/Home";
+import Header from "./components/Header";
+import Checkout from "./pages/Checkout";
+import Login from "./pages/Login";
 function App() {
   return (
     <div className="App">
