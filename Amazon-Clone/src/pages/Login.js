@@ -1,11 +1,36 @@
 import React, { useState } from "react";
 import "../styles/pages/Login.css";
-import { Link } from "react-router-dom";
-import {} from "../firebase";
+import { Link, useHistory } from "react-router-dom";
+import { auth } from "../firebase";
 
 function Login() {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const signIn = (e) => {
+    e.preventDefault();
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        history.push("/");
+      })
+      .catch((error) => alert(error.message));
+  };
+
+  const register = (e) => {
+    e.preventDefault();
+
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        if (auth) {
+          history.push("/");
+        }
+      })
+      .catch((error) => alert(error.message));
+  };
 
   return (
     <div className="login">
@@ -33,7 +58,11 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit" className="login__signInButton">
+          <button
+            onClick={signIn}
+            type="submit"
+            className="login__signInButton"
+          >
             Sign In
           </button>
         </form>
@@ -43,7 +72,7 @@ function Login() {
           Interest-Based Ads Notice.
         </p>
 
-        <button className="login__registerButton">
+        <button onClick={register} className="login__registerButton">
           Create your Amazon Clone account
         </button>
       </div>
