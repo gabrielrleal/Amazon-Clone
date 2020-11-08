@@ -4,6 +4,10 @@
   margin-bottom: 20px;
 }
 
+.checkoutProduct__rating {
+  display: flex;
+}
+
 .checkoutProduct__info {
   padding-left: 20px;
 }
@@ -20,10 +24,6 @@
   object-fit: contain;
   width: 180px;
   height: 180px;
-}
-
-.checkoutProduct__rating {
-  display: flex;
 }
 
 .checkoutProduct__title {

@@ -4,6 +4,7 @@ import Routes from "./routes";
 import { useEffect } from "react";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
+import { HashRouter, Router } from "react-router-dom";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
@@ -33,7 +34,6 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <Routes />
     </div>
   );
