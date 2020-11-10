@@ -7,6 +7,8 @@ import * as serviceWorker from "./serviceWorker";
 import reducer, { initialState } from "./reducer";
 import { StateProvider } from "./StateProvider";
 
+//StateProvider wrap the app and provide the DataLayer to all the components of the app
+
 ReactDOM.render(
   <React.StrictMode>
     <StateProvider initialState={initialState} reducer={reducer}>

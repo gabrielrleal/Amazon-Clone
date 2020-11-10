@@ -67,9 +67,10 @@ function Login() {
           </button>
         </form>
         <p>
-          By signing-in you agree to Amazon gabrielrleal Clone Conditions of Use
-          & Sale Please see our Privacy Notice, our Cookies Notice and our
-          Interest-Based Ads Notice.
+          By signing-in you agree to Amazon{" "}
+          <a href="https://github.com/gabrielrleal">gabrielrleal</a> Clone
+          Conditions of Use & Sale Please see our Privacy Notice, our Cookies
+          Notice and our Interest-Based Ads Notice.
         </p>
 
         <button onClick={register} className="login__registerButton">

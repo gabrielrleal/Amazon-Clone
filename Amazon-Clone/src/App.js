@@ -1,10 +1,7 @@
-import "./styles/pages/App.css";
-import Header from "./components/Header";
 import Routes from "./routes";
 import { useEffect } from "react";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
-import { HashRouter, Router } from "react-router-dom";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();
