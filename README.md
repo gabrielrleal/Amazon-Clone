@@ -1,8 +1,14 @@
 # Amazon Clone
 
-This project is a Amazon Clone built in [React.Js](https://reactjs.org/) for learning purposes, special thanks to [Rafeh Qazi](https://github.com/CleverProgrammer) and [Sonny](https://github.com/sonnysangha) for making this possible with the content on [youtube](https://www.youtube.com/channel/UCqrILQNl5Ed9Dz6CGMyvMTQ).
+This project is a Amazon Clone built in [React.Js](https://reactjs.org/) for learning purposes, not associated with Amazon.
 
-## Prerequisites
+## Live App
+
+Check out the application .
+
+https://challenge-e5509.web.app/
+
+## Usage
 
 Install following dependencies.
 
