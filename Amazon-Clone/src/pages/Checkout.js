@@ -3,14 +3,12 @@ import "../styles/pages/Checkout.css";
 import Subtotal from "../components/Subtotal";
 import { useStateValue } from "../StateProvider";
 import CheckoutProduct from "../components/CheckoutProduct";
-import Header from "../components/Header";
 
 function Checkout() {
   const [{ basket, user }, dispatch] = useStateValue();
 
   return (
     <div>
-      <Header />
       <div className="checkout">
         <div className="checkout__left">
           <img
