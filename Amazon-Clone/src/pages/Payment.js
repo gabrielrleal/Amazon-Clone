@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import CheckoutProduct from "../components/CheckoutProduct";
-import { useStateValue } from "../StateProvider";
+import { Link, useHistory } from "react-router-dom";
+import CurrencyFormat from "react-currency-format";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import "../styles/pages/Payment.css";
-import CurrencyFormat from "react-currency-format";
+
+import { useStateValue } from "../StateProvider";
+import CheckoutProduct from "../components/CheckoutProduct";
 import { getBasketTotal } from "../reducer";
 import axios from "../axios";
+import { db } from "../firebase";
+
 function Payment() {
+  const history = useHistory();
   const [{ basket, user }, dispatch] = useStateValue();
 
   const stripe = useStripe();
@@ -29,14 +33,43 @@ function Payment() {
       });
       setClientSecret(response.data.clientSecret);
     };
+    getClientSecret();
   }, [basket]);
+
+  console.log("the clientSecret is>>>> ", clientSecret);
 
   const handleSubmit = async (event) => {
     //stripe
     event.preventDefault();
     setProcessing(true);
 
-    const payload = await stripe.confirmCardPayment;
+    const payload = await stripe
+      .confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: elements.getElement(CardElement),
+        },
+      }) //paymentIntent = payment confirmation
+      .then(({ paymentIntent }) => {
+        //storing in database
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
+        setSucceeded(true);
+        setError(null);
+        setProcessing(false);
+
+        dispatch({
+          type: "EMPTY_BASKET",
+        });
+        history.replace("/orders");
+      });
   };
   const handleChange = (event) => {
     setDisabled(event.empty);
