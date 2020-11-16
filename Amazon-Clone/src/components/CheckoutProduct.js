@@ -30,7 +30,7 @@ function CheckoutProduct({ id, image, title, price, rating, hideButton }) {
               <p>🌟</p>
             ))}
         </div>
-        {!hideButton && (
+        {!hideButton && ( //only render this button if its not hiden
           <button onClick={removeFromBasket}>Remove from Basket</button>
         )}
       </div>
